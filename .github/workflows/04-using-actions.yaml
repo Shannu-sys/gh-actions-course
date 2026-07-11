@@ -9,8 +9,12 @@ jobs:
       # Checkout the code
       - name: CheckOut Code
         uses: actions/checkout@v4
-        
-      # Listing the folder
-      - name: Printing Folders
-        run: ls -lh
 
+      # set up node
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24.x'
+      # Installing Dependencies
+      - name: Install Dependencies
+        run: npm ci
